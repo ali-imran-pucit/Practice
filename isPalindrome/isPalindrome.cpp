@@ -19,10 +19,8 @@ void main()
 		int number1 = number;
 		while (number1 > 0)
 		{
-			int remainder = number1 % 10;
-			int b = number1 / 10;
-			reversenumber = reversenumber * 10 + remainder;
-			number1 = b;
+			reversenumber = (reversenumber * 10) + (number1 % 10);
+			number1 /= 10;
 		}
 
 		if (number == reversenumber)
