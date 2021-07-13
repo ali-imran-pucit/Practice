@@ -1,25 +1,24 @@
 #include <iostream>
- #include <string>
+#include <string>
 using namespace std;
 
 void main()
 {
 	int number = 0;
-	string octal;
+	string binary;
 
 	cout << "please enter a number" << endl;
 	cin >> number;
 
 	if (number == 0) {
-		cout << "Octal of given input is: 0";
+		cout << "binary of given input is: 0";
 	}
 	else {
 		while (number > 0)
 		{
-			octal = (char)((number % 8) + 48) + octal;
-			number /= 8;
+			binary = (char)((number % 2) + 48) + binary;
+			number /= 2;
 		}
-		cout << "Octal of given input is: " << octal;
+		cout << "binary of given input is: " << binary;
 	}
 }
-
