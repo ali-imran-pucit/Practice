@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+ #include <string>
 using namespace std;
 
 void main()
@@ -10,23 +10,15 @@ void main()
 	cout << "please enter a number" << endl;
 	cin >> number;
 
-	if (number > 1)
-	{
-		while (number > 1)
+	if (number == 0) {
+		cout << "binary of given input is: 0";
+	}
+	else {
+		while (number > 0)
 		{
-			binary = to_string(number % 2) + binary;
+			binary = (char)((number % 2) + 48) + binary;
 			number /= 2;
-			if (number == 1)
-			{
-				binary = to_string(number) + binary;
-			}
 		}
-
 		cout << "binary of given input is: " << binary;
 	}
-	else
-	{
-		cout << "Enter a Valid Number";
-	}
-
 }
