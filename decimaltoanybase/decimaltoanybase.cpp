@@ -9,69 +9,38 @@ void main()
 	string result;
 	string basename;
 
-	cout << "Please enter a number" << endl;
+	cout << "please enter a number" << endl;
 	cin >> number;
-	cout << "Please enter a base" << endl;
+	cout << "please enter a base" << endl;
 	cin >> base;
 
 
 
 	if (base == 2 || base == 8 || base == 16) {
 		if (base == 2) {
-			basename = "Binary";
+			basename = "binary";
 		}
 		else if (base == 8) {
-			basename = "Octal";
+			basename = "octal";
 		}
 		else if (base == 16) {
-			basename = "HexaDecimal";
+			basename = "hexadecimal";
 		}
 
-		while (number > 1)
-		{
-			if (base == 16) {
-				string remainder;
-				remainder = to_string(number % base);
-				if (remainder == "10") {
-					remainder = "A";
-				}
-				else if (remainder == "11") {
-					remainder = "B";
-				}
-				else if (remainder == "12") {
-					remainder = "C";
-				}
-				else if (remainder == "13") {
-					remainder = "D";
-				}
-				else if (remainder == "14") {
-					remainder = "E";
-				}
-				else if (remainder == "15") {
-					remainder = "F";
-				}
-				result = remainder + result;
-				number /= base;
-				if (number == 1)
-				{
-					result = to_string(number) + result;
-				}
-			}
-			else
+		if (number == 0) {
+			cout << basename << " of given input is: 0";
+		}
+		else {
+			while (number > 0)
 			{
-
-				result = to_string(number % base) + result;
+				result = (char)((number % base) < 10 ? ((number % base) + 48) : ((number % base) + 55)) + result;
 				number /= base;
-				if (number == 1)
-				{
-					result = to_string(number) + result;
-				}
-			}			
+			}
+			cout << basename << " of given input is : " << result;
 		}
-		cout << basename << " of given Input is: " << result;
 	}
 	else
 	{
-		cout << "Please Enter base from Binary '2', Octal '8' and Hexa '16' only";
+		cout << "please enter base from binary '2', octal '8' and hexa '16' only";
 	}
 }
