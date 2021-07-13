@@ -9,8 +9,6 @@ void main()
 	int candyoffer = 0;
 	int candies = 0;
 	int wrappers = 0;
-	int remainder = 0;
-
 	cout << "Please enter amount" << endl;
 	cin >> amount;
 	cout << "Please enter price of candy" << endl;
@@ -24,10 +22,9 @@ void main()
 		wrappers = candies;
 		while (wrappers >= candyoffer)
 		{
-			remainder = (wrappers % candyoffer);
-			wrappers = wrappers / candyoffer;
-			candies = candies + wrappers;
-			wrappers = wrappers + remainder;
+			wrappers /= candyoffer;
+			candies += wrappers;
+			wrappers += (wrappers % candyoffer);
 		}
 		cout << "The maximum of " << candies << " candies can be bought from " << amount << " with " << wrappers << " wrappers to spare.";
 	}
