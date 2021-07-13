@@ -12,7 +12,6 @@ void main()
 		for (int divisor = 1; divisor <= number / 2; divisor++) {
 			bool isdivisor = false;
 			if (number % divisor == 0) {
-				isdivisor = true;
 				sum = sum + divisor;
 			}
 		}
