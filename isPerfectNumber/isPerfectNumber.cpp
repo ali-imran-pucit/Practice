@@ -10,7 +10,6 @@ void main()
 	if (number > 0) {
 		int sum = 0;
 		for (int divisor = 1; divisor <= number / 2; divisor++) {
-			bool isdivisor = false;
 			if (number % divisor == 0) {
 				sum = sum + divisor;
 			}
